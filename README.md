@@ -15,7 +15,7 @@ refocused.
 
 __OSX:__
 
-- MacVim (`brew cask install macvim`)
+- NeoVim (`brew cask install neovim`)
 
 __Linux:__
 
@@ -25,7 +25,7 @@ __Linux:__
 #### Install
 
 ```bash
-curl -fsSL https://raw.github.com/cknadler/vim-anywhere/master/install | bash
+curl -fsSL https://raw.github.com/mblode/vim-anywhere/master/install | bash
 ```
 
 #### Update

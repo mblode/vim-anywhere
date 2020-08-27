@@ -2,7 +2,7 @@
 #
 # vim-anywhere - use Vim whenever, wherever
 # Author: Chris Knadler
-# Homepage: https://www.github.com/cknadler/vim-anywhere
+# Homepage: https://www.github.com/mblode/vim-anywhere
 #
 # Open a temporary file with Vim. Once Vim is closed, copy the contents of that
 # file to the system clipboard.
@@ -66,13 +66,13 @@ elif [[ $OSTYPE == "darwin"* ]]; then
     "Please reinstall vim-anywhere."
 
   app=$(osascript $AW_PATH/script/current_app.scpt)
-  mvim_path=$(cat $AW_PATH/.path)
+  nvim_path=$(cat $AW_PATH/.path)
 
-  require_file_exists $mvim_path \
-    "mvim must have been moved or uninstalled.\nPlease make sure it is" \
+  require_file_exists $nvim_path \
+    "nvim must have been moved or uninstalled.\nPlease make sure it is" \
     "available in your path and then reinstall vim-anywhere."
 
-  $mvim_path $VIM_OPTS $TMPFILE
+  $nvim_path $VIM_OPTS $TMPFILE
   # todo, fix invalid file
 
   # NOTE

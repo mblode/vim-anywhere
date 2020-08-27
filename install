@@ -2,11 +2,11 @@
 #
 # vim-anywhere - use Vim whenever, wherever
 # Author: Chris Knadler
-# Homepage: https://www.github.com/cknadler/vim-anywhere
+# Homepage: https://www.github.com/mblode/vim-anywhere
 #
 # Installs vim-anywhere. Intended for use via curl:
 #
-#   $ curl -fsSL https://raw.github.com/cknadler/vim-anywhere/master/install | bash
+#   $ curl -fsSL https://raw.github.com/mblode/vim-anywhere/master/install | bash
 
 set -e
 
@@ -46,7 +46,7 @@ require_one_installed() {
 }
 
 AW_PATH=$HOME/.vim-anywhere
-AW_URL='https://github.com/cknadler/vim-anywhere'
+AW_URL='https://github.com/mblode/vim-anywhere'
 
 ###
 # pre-installation checks
@@ -76,7 +76,7 @@ if [[ $OSTYPE == "linux-gnu" ]]; then
 
 # OSX specific checks
 elif [[ $OSTYPE == "darwin"* ]]; then
-  require_installed mvim 'Run `brew install macvim`.'
+  require_installed nvim 'Run `brew install neovim`.'
 
 # Unsupported OS
 else
@@ -121,8 +121,8 @@ if [[ $OSTYPE == "linux-gnu" ]]; then
 
 # OSX install
 elif [[ $OSTYPE == "darwin"* ]]; then
-  # store the absolute path to the mvim executable
-  which mvim > $AW_PATH/.path
+  # store the absolute path to the nvim executable
+  which nvim > $AW_PATH/.path
 
   # install the workflow as a service
   mkdir -p $HOME/Library/Services
@@ -133,7 +133,7 @@ elif [[ $OSTYPE == "darwin"* ]]; then
     "(null) - VimAnywhere - runWorkflowAsService" = {
       "key_equivalent" = "@^v";
     };
-    "org.vim.MacVim - MacVim/New MacVim Buffer With Selection - openSelection" = {
+    "org.vim.NeoVim - NeoVim/New NeoVim Buffer With Selection - openSelection" = {
       "key_equivalent" = "@^v";
     };
   }'
