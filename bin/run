@@ -38,7 +38,7 @@ done
 AW_PATH=$HOME/.vim-anywhere
 TMPFILE_DIR=/tmp/vim-anywhere
 TMPFILE=$TMPFILE_DIR/doc-$(date +"%y%m%d%H%M%S")
-VIM_OPTS=--nofork
+VIM_OPTS=""
 
 # Use ~/.gvimrc.min or ~/.vimrc.min if one exists
 VIMRC_PATH=($HOME/.gvimrc.min $HOME/.vimrc.min)
@@ -72,7 +72,7 @@ elif [[ $OSTYPE == "darwin"* ]]; then
     "nvim must have been moved or uninstalled.\nPlease make sure it is" \
     "available in your path and then reinstall vim-anywhere."
 
-  $nvim_path $TMPFILE
+  $nvim_path $VIM_OPTS $TMPFILE
   # todo, fix invalid file
 
   # NOTE
