@@ -72,7 +72,7 @@ elif [[ $OSTYPE == "darwin"* ]]; then
     "nvim must have been moved or uninstalled.\nPlease make sure it is" \
     "available in your path and then reinstall vim-anywhere."
 
-  $nvim_path $VIM_OPTS $TMPFILE
+  $nvim_path --clean $TMPFILE
   # todo, fix invalid file
 
   # NOTE
